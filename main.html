@@ -1,0 +1,67 @@
+<!DOCTYPE html> 
+<html lang="es">
+
+<head>
+    <meta charset=" UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title> Blog Personal! :D</title>
+</head>
+<body>
+    <h1 align="center"> Reproductor en loop (,; ⩌ ;,)</h1>
+    <h3> ¿Como logramos que la musica se repita en loop? :O</h3>
+    <p> Bueno, lo primero que tenemos que tener es nuestro archivo de audio, obvio en mp3 jeje. 
+        Necesitaremos un script adicional, el cual puede realizarse dentro del mismo HTML :D
+        y esta super sencillo, son unicamente 3 lineas. 
+    </p>
+    <audio id="musica" autoplay loop>
+        <source src="purin.mp3" type="audio/mpeg">
+    </audio>
+    
+    <p> Empecemos por comprender el funcionamiento desde 0, aqui usamos la etiqueta <b> audio </b> que le hace comprender 
+    al marcado que estamos hablando de un audio vaya, en el apartado <b>id</b> colocaremos el nombre del document que
+usaremos en nuestro scrip, y finalmente el <b> autoplay loop </b> que nos indica que el audio se repetira hasta que la pagina se cierre. </p>
+ 
+<p> Despues llamaremos - usemos de hecho, ya que no estamos hablando de variables jeje- una etiqueta <b> surce </b>, que nos habla de 
+links externos, o de links que se encuentren dentro de la carpeta en la cual estamos trabajando, el nombre de nuestro archivo de audio y el
+tipo, que en este caso sera: <b> audio/mpeg </b> y cerramos la etiqueta de audio. 
+
+
+    </p>
+<img src="audioetiquete.png" >
+<h3> Ahora continuemos con el script! </h3>
+<p style="font-weight: lighter"> Bien, en nuestra primera linea comenzaremos usando una variable <b> constante </b> ya que nuestro audio va a repetirse constantemente, 
+    nombraremos la variable <b> audio </b> y le asignaremos un get de elemento por ID, y en el id ponemos el nombre que se nos antoje, yo coloque 
+    <b> musica </b>, asi a secas. Puntito y coma, ahora para reproducir el audio tenemos que elaborar la siguiente estructura: 
+    <b> nombre de la variable - play - catch </b> que nos indica que el audio se va a reprodcir y se va a obtener el loop, ya lo demas es un 
+    aburrido mensaje de error, suele ocurrir si se tiene la reproduccion automatica desactivada. 
+</b></p>
+
+<img src="audioscript.png" >
+<p> Es lo que yo utilice para realizarlo, y es como yo lo he entendido, graciaas. </p>
+<img src="bobbailador.gif" >
+<p> y eso es todo amigos </p>
+</body>
+
+<script> 
+    const audio = document.getElementById('musica');
+        audio.play().catch(() => {
+            console.log("Error");
+        });
+</script>
+
+<style>
+    p{
+        font-family: Poppins, sans-serif;
+        
+    }
+    h1{
+        font-family: Poppins, sans-serif;
+    }
+    h3{ 
+        font-family: Poppins, sans-serif;
+    }
+</style>
+</html>
